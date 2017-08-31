@@ -1,0 +1,89 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="javascript:;">T.T.A</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 任务</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 通讯录</a></li>
+                <li><a href="javascript:loadModal('tta-modal-lg')"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 设置</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> 我的资料 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 编辑我的资料</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="javascript:logout();"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" placeholder="搜索...">
+                    <div class="input-group-btn"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li id="litTaskTab"><a href="javascript:loadTab('tTaskTab');"><span class="glyphicon glyphicon-cloud"></span> 我的团队任务<span class="sr-only"></span></a></li>
+                <li id="lipTaskTab"><a href="javascript:loadTab('pTaskTab');"><span class="glyphicon glyphicon-heart"></span> 我的个人任务</a></li>
+                <li id="lifTaskTab"><a href="javascript:loadTab('fTaskTab');"><span class="glyphicon glyphicon-star"></span> 我关注的任务</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li id="lianalyTab"><a href="javascript:loadTab('analyTab');"><span class="glyphicon glyphicon-stats"></span> 任务统计</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist" id="tablist">
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content" id="mainTabContent">
+                </div>        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker2'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker2').datetimepicker({
+                	format:'YYYY-MM-DD HH:mm:ss',
+                	locale:'zh_cn'
+                });
+            });
+        </script>
+    </div>
+</div>
+<div class="modal fade tta-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    this is a modal
+    </div>
+  </div>
+</div>
